@@ -1,9 +1,12 @@
-FROM mobingi/aws-codebuild-docker-images:release-1.8.0
+FROM mobingi/aws-codebuild-docker-images:latest
 
 RUN useradd -m -s /bin/bash builduser
+RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment \
+  && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
+  && echo "LANG=en_US.UTF-8" > /etc/locale.conf \
+  && locale-gen en_US.UTF-8
 
 USER builduser
-ENV LANG=C
 WORKDIR /home/builduser
 ENV HOME=/home/builduser
 
