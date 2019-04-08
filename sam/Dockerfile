@@ -1,4 +1,4 @@
-FROM mobingi/aws-codebuild-docker-images:latest
+FROM mobingi/aws-codebuild-docker-images:release-1.8.0
 
 RUN useradd -m -s /bin/bash builduser
 
