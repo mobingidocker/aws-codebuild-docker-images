@@ -1,5 +1,6 @@
 FROM mobingi/aws-codebuild-docker-images:latest
 
+RUN apt-get install -y locales
 RUN useradd -m -s /bin/bash builduser
 RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment \
   && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
